@@ -1,3 +1,4 @@
 class Enigma
-  def initialize
+  def initialize(message, key = #defaults date)
+    
 end

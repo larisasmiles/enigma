@@ -4,11 +4,10 @@ require './lib/key_generator'
 
 class KeyGeneratorTest < Minitest::Test
 
-  def test_key_is_passed_in
-    key = "12345"
-    k = KeyGenerator.new(key)
+  def test_does_key_exist
+    key = KeyGenerator.new
 
-    assert_equal key, k.key_gen
+    assert_instance_of KeyGenerator, key
   end
 
   def test_key_is_not_passed_in
@@ -19,6 +18,11 @@ class KeyGeneratorTest < Minitest::Test
     refute_equal k_1, k_2
   end
 
+  def test_if_ken_gen_outputs_5_numbers
+    key = KeyGenerator.new
 
+    result = key.key_gen.length
+
+    assert_equal 5, result
   end
 end
