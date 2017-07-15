@@ -25,4 +25,12 @@ class KeyGeneratorTest < Minitest::Test
 
     assert_equal 5, result
   end
+
+  def test_if_key_gen_outputs_random_numbers
+    key = KeyGenerator.new
+
+    result = key.key_gen
+
+    refute "00000", result
+  end
 end
